@@ -1,0 +1,160 @@
+.usercenter {
+    .user-header {
+        display: flex;
+        width: 1280px;
+        height: 180px;
+        margin: auto;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 23px 40px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        font-size: 14px;
+        align-items: center;
+
+        .user-content {
+            display: flex;
+            align-items: center;
+
+            .user-wrap {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                width: 100px;
+                height: 100px;
+                border: 3px solid #ebba8e;
+                border-radius: 50%;
+                margin-right: 25px;
+
+                .user-image {
+                    display: flex;
+                    width: 94px;
+                    height: 94px;
+                    font-size: 48px;
+                    color: #e08792;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 8px;
+                    background: #f0f0f0;
+
+                }
+
+                .user-portrait {
+                    max-width: 100%;
+                    max-height: 100%;
+                    border-radius: 100%;
+                }
+            }
+
+            .user-detail {
+                .user-name {
+                    display: flex;
+                    align-items: center;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: #000;
+                    height: 32px;
+                    margin-bottom: 8px;
+
+                    .anticon-form {
+                        display: inline-block;
+                        font-style: normal;
+                        line-height: 0;
+                        text-align: center;
+                        text-transform: none;
+                        vertical-align: -0.125em;
+                        text-rendering: optimizeLegibility;
+                    }
+
+                    .icon {
+                        font-size: 18px;
+                        margin-left: 10px;
+                        margin-right: 20px;
+                        cursor: pointer;
+                        color: #2932e1;
+                    }
+                }
+
+                .post-id {
+                    display: flex;
+                    margin-bottom: 4px;
+                    align-items: center;
+                    color: #666;
+                    line-height: 22px;
+
+                    span {
+                        margin-right: 8px;
+                    }
+                }
+
+                .user-extra {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 4px;
+                    color: #666;
+                    line-height: 22px;
+
+                    .extra-item {
+                        font-size: 14px;
+                        display: inline-block;
+                        vertical-align: top;
+                        position: relative;
+                    }
+                }
+
+                .user-tag {
+
+                    span {
+                        float: right;
+                        width: 300px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+
+    .user-body {
+        width: 1280px;
+        margin: auto;
+
+        .user-menu {
+            float: left;
+        }
+
+        .user-display {
+            float: right;
+            width: 1000px;
+            height: 600px;
+            background-color: #fff;
+            border-radius: 4px;
+
+            .section {
+                color: #000;
+                padding: 0 30px;
+
+                .section-title {
+                    position: relative;
+                    font-size: 16px;
+                    line-height: 24px;
+                    padding-left: 8px;
+                    margin: 20px 0;
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .section-title:before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 3px;
+                    height: 1em;
+                    background-color: #000;
+                }
+            }
+        }
+    }
+}

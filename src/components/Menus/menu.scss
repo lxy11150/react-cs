@@ -1,0 +1,104 @@
+.menus {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1;
+
+    .f_left {
+        float: left;
+    }
+
+    .f_right {
+        float: right;
+    }
+
+    .news_card {
+        width: 580px;
+        margin-bottom: 20px;
+        background: #fff;
+        color: #fff;
+        box-shadow: 0 2px 10px #e6ebf080;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .blue {
+            background: linear-gradient(rgb(62, 81, 255) 0%, rgb(125, 132, 255) 100%);
+        }
+
+        .purple {
+            background: linear-gradient(rgb(108, 62, 255) 0%, rgb(156, 125, 255) 100%);
+        }
+
+        .green {
+            background: linear-gradient(rgb(21, 166, 18) 0%, rgb(114, 228, 108) 100%);
+        }
+
+        .orange {
+            background: linear-gradient(rgb(218, 142, 21) 0%, rgb(255, 210, 85) 100%);
+        }
+
+        .red {
+            background: linear-gradient(rgb(255, 0, 0) 0%, rgb(243, 144, 144) 100%);
+        }
+
+        .pink {
+            background: linear-gradient(rgb(249, 0, 154) 0%, rgb(248, 140, 239) 100%);
+        }
+
+        .news_card_header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 20px;
+
+            .title {
+                font-size: 24px;
+            }
+
+            .link {
+                font-size: 14px;
+                color: #fff;
+
+                .anticon-double-right {
+                    margin-left: 10px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .news_card_body {
+            padding: 16px 0;
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li a {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    padding: 0 20px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #333;
+
+                    .news_title {
+                        max-width: 75%;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                    .time {
+                        margin-left: auto;
+                        font-size: 14px;
+                        color: #666;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.competition {
+    position: relative;
+    background: url(../../../assets/jinqibisai.jpg) no-repeat;
+
+    .lg {
+        position: absolute;
+        margin-left: 35px;
+        font-weight: 700;
+        font-size: 24px;
+        color: #fff;
+    }
+
+    .tb_pages {
+        thead {
+            background-color: #2465e2;
+            border-right: 1px solid #2465e2;
+        }
+
+        tbody {
+            tr td {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis; //超出部分用省略号代替
+                line-height: 26px;
+            }
+
+            .cop_name_first {
+                float: right;
+                width: 280px;
+                line-height: 26px;
+            }
+
+            .btn_span_blue {
+                color: #fff;
+                background: #2465e2;
+            }
+
+            .btn_span_red {
+                color: #fff;
+                background: #ec3c3c;
+            }
+
+            .btn_span_gray {
+                color: #8f8f8f;
+                background: #d5d5d5;
+            }
+
+            .btn_span {
+                display: inline-block;
+                padding: 0px 6px;
+                margin-left: 10px;
+                font-size: 12px;
+                line-height: 20px;
+            }
+
+            .td_last {
+                float: left;
+                line-height: 26px;
+                margin-left: 30px;
+            }
+        }
+    }
+}

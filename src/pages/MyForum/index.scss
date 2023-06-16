@@ -1,0 +1,42 @@
+.my-forum {
+    .my-post {
+        .section-body {
+            table {
+                width: 900px;
+                margin: auto;
+                border-radius: 4px;
+                border-color: #e1e1e1;
+
+                thead {
+                    height: 40px;
+                    background-color: #c6f1f5;
+                }
+
+                tbody {
+                    tr {
+                        td {
+                            height: 42px;
+                            text-align: center;
+                            font-size: 18px;
+                            color: #7b7b7be2;
+                        }
+
+                        .delete {
+                            font-size: 14px;
+                            color: red;
+
+                            .ant-btn {
+                                padding: 2px !important;
+                                border-color: #c6f1f5;
+                            }
+
+                            .btn-1 {
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

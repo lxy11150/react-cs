@@ -1,0 +1,45 @@
+.my-homepage {
+    .section {
+        .section-body {
+            width: 820px;
+
+            .achievement {
+                box-sizing: border-box;
+                padding: 0 20px;
+                height: 217px;
+                border: 1px solid #ebebeb;
+                margin-bottom: 40px;
+
+                .achievement-item {
+                    display: flex;
+                    align-items: center;
+                    height: 54px;
+                    border-bottom: 1px solid #ebebeb;
+
+                    .achievement-tag {
+                        padding: 2px;
+                        background-color: #ec971f;
+                        color: #fff;
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+
+                    .item-content {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex: 1;
+
+                        >span {
+                            margin-left: 30px;
+                            color: #666;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

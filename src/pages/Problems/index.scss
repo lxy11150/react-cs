@@ -1,0 +1,19 @@
+.question_list {
+    position: relative;
+    height: 800px;
+    top: 350px;
+
+    #scrollableDiv {
+        position: absolute;
+        float: left;
+        left: 50%;
+        height: 800px;
+        width: 1200px;
+        margin-left: -600px;
+        overflow: auto;
+        padding: 0 16px;
+        border: 1px solid rgba(140, 140, 140, 0.35);
+        background-color: #fff;
+        border-radius: 6px;
+    }
+}

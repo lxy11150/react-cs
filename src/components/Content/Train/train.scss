@@ -1,0 +1,129 @@
+.train {
+    background: url(../../../assets/train.jpg) no-repeat;
+    position: relative;
+
+    .tb_pages {
+        thead {
+            background: #1da053;
+            border-right: 1px solid #1da053;
+        }
+
+        tbody {
+            .tb_first {
+                float: right;
+                width: 50px;
+                line-height: 26px;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 6px 12px;
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.42857143;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                touch-action: manipulation;
+                cursor: pointer;
+                user-select: none;
+                background-image: none;
+                border: 1px solid transparent;
+            }
+
+            .btn:focus {
+                outline: thin dotted;
+                outline: 5px auto -webkit-focus-ring-color;
+                outline-offset: -2px;
+            }
+
+            .btn:active {
+                background-image: none;
+            }
+
+            //比赛难度按钮颜色变化
+            .btn_basic {
+                color: #fff;
+                background-color: #5cb85c;
+                border-color: #4cae4c;
+            }
+
+            .btn_basic:hover,
+            .btn_basic:focus,
+            .btn_basic:active {
+                color: #fff;
+                background-color: #449d44;
+                border-color: #398439;
+            }
+
+            .btn_easy {
+                color: #fff;
+                background-color: #5bc0de;
+                border-color: #46b8da;
+            }
+
+            .btn_easy:hover,
+            .btn_easy:focus,
+            .btn_easy:active {
+                color: #fff;
+                background-color: #31b0d5;
+                border-color: #269abc
+            }
+
+            .btn_medium {
+                color: #fff;
+                background-color: #f0ad4e;
+                border-color: #eea236;
+            }
+
+            .btn_medium:hover,
+            .btn_medium:focus,
+            .btn_medium:active {
+                color: #fff;
+                background-color: #ec971f;
+                border-color: #d58512
+            }
+
+            .btn_hard {
+                color: #fff;
+                background-color: #d9534f;
+                border-color: #d43f3a;
+            }
+
+            .btn_hard:hover,
+            .btn_hard:focus,
+            .btn_hard:active {
+                color: #fff;
+                background-color: #c9302c;
+                border-color: #ac2925;
+            }
+
+            //比赛类型按钮颜色变化
+            .btn-unknow_color {
+                background-color: #5F3BB9;
+                color: white;
+            }
+
+            .btn-unknow_color:hover {
+                background-color: #5F3B99;
+                color: white;
+            }
+
+            .btn-light_purple {
+                background-color: #9B33A1;
+                color: white;
+            }
+
+            .btn-light_purple:hover {
+                background-color: #9B3388;
+                color: white;
+            }
+
+            .label {
+                font-size: 14px;
+                padding: 3px 6px;
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.content {
+    width: 1100px;
+    margin: 0 auto;
+
+    .box-content {
+        margin-top: 10px;
+        margin-bottom: 45px;
+    }
+
+    .tb_box {
+        height: 295px;
+        overflow: auto;
+    }
+
+    .table {
+        max-width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        thead tr th {
+            color: #fff;
+            line-height: 17px;
+            border: 0px;
+            font-size: 14px;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td,
+        th {
+            padding: 8px;
+        }
+
+        a {
+            font-size: 15px;
+            font-weight: bold;
+            color: #5a5a5a;
+        }
+
+        .align_c {
+            text-align: center;
+        }
+
+        .align_l {
+            text-align: left;
+        }
+    }
+
+    .tb_pages {
+        margin-left: 228px;
+        width: 872px;
+        table-layout: fixed;
+        background: #fafafa;
+
+        tbody tr {
+            border-top: 1px solid #e2e2e2;
+            border-top: 1px solid #ddd;
+        }
+    }
+}

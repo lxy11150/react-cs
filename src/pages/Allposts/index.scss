@@ -1,0 +1,86 @@
+.allposts {
+    .all_container {
+        position: relative;
+        margin: auto;
+        width: 1000px;
+        height: 500px;
+        background-color: #fff;
+        border-radius: 10px;
+
+        .all_body {
+            padding-top: 10px;
+
+            .hot_item {
+                height: 130px;
+                padding: 24px 4px 16px;
+                border-bottom: 1px dashed #e1e1e1;
+
+                .user_i {
+                    float: left;
+
+                    img {
+                        width: 80px;
+                        height: 80px;
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-right: 12px;
+                        border-radius: 50%;
+                    }
+                }
+
+                .item_detail {
+                    float: left;
+                    width: 860px;
+                    margin-left: 30px;
+
+                    .i_title {
+                        font-size: 24px;
+                        font-weight: 600;
+                        padding-bottom: 7px;
+                        cursor: pointer;
+                    }
+
+                    .i_title:hover {
+                        color: #0062ff;
+                    }
+
+                    .i_con {
+                        width: 100%;
+                        margin-top: 15px;
+
+                        .discuss_user {
+                            color: #0062ff;
+                            font-size: 16px;
+                        }
+
+                        p {
+                            display: inline-block;
+                            margin: 0;
+                            font-size: 16px;
+                            color: #b7b7b7;
+                        }
+
+                        .reply {
+                            float: right;
+
+                            span {
+                                font-size: 16px;
+                                padding-left: 5px;
+                                color: #b7b7b7;
+                            }
+
+                            .pad {
+                                padding-left: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .ant-pagination {
+            float: right;
+            margin-top: 15px;
+        }
+    }
+}

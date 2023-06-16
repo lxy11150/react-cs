@@ -1,0 +1,49 @@
+.banner {
+    overflow: hidden;
+    height: 468px;
+
+    .carousel {
+        position: relative;
+
+        .ant-carousel {
+
+            img {
+                width: 1200px;
+                margin: auto;
+            }
+
+            .slick-dots li button {
+                background-color: #00fdfd;
+            }
+        }
+
+        ul {
+
+            .prev,
+            .next {
+                position: absolute;
+                top: 50%;
+                margin-top: -20px;
+                height: 40px;
+                width: 30px;
+                background: rgba(0, 0, 0, .3);
+                text-align: center;
+                line-height: 40px;
+                color: #fff;
+                z-index: 999;
+            }
+
+            .prev {
+                left: 159px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+
+            .next {
+                right: 159px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+        }
+    }
+}

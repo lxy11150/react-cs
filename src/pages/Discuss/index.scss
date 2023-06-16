@@ -1,0 +1,293 @@
+.discuss {
+    margin-top: 30px;
+
+    .dis_container {
+        width: 1250px;
+        margin: auto;
+        border-radius: 10px;
+
+        .dis_left {
+            float: left;
+            width: 25%;
+            background-color: #fff;
+            border-radius: 10px;
+
+            .dis_info {
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+
+                .user_nick {
+                    text-align: center;
+                    background-image: url(../../assets/icon.png);
+                    background-repeat: no-repeat;
+                    background-size: 24px;
+                }
+
+                h4 {
+                    font-size: 18px;
+                    margin-top: 10px;
+                    margin-bottom: 30px;
+                    font-weight: 500;
+                }
+
+                p {
+                    margin: 0 0 10px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .dis_right {
+            width: 74%;
+            float: right;
+            border-radius: 10px;
+            background-color: #fff;
+
+            .dis_content {
+                border: 1px solid #ddd;
+                border-radius: 10px;
+
+                .dis_header {
+                    border-bottom: 1px solid #ddd;
+                    padding: 15px;
+
+                    .dis_title {
+                        height: 35px;
+                        margin: 12px 0;
+                        line-height: 35px;
+                        font-size: 18px;
+
+                        h1 {
+                            display: inline;
+                            font-size: 18px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .author {
+                        .anticon-user {
+                            font-size: 18px;
+                            margin-right: 5px;
+                        }
+
+                        a {
+                            color: #428bca !important;
+                            margin-right: 30px;
+                        }
+
+                        .anticon-history {
+                            margin-left: 20px;
+                        }
+
+                        .scan {
+                            float: right;
+                            height: 22px;
+                            font-size: 12px;
+                            line-height: 22px;
+                            color: #666;
+                        }
+                    }
+                }
+
+                .dis_body {
+                    .body_content {
+                        border-bottom: 1px solid #ddd;
+                        padding: 15px;
+                        white-space: pre-line;
+
+                        a {
+                            color: blue;
+                            text-decoration: underline !important;
+                        }
+
+                        p {
+                            margin: 8px auto;
+                        }
+
+                        img {
+                            width: 50%;
+                        }
+
+                        .dis_help {
+                            height: 21px;
+                            margin-top: 30px;
+                            padding-bottom: 5px;
+
+                            span {
+                                float: right;
+                                height: 21px;
+                                line-height: 21px;
+                                font-size: 16px;
+                                cursor: pointer;
+                            }
+
+                            .anticon-dislike {
+                                padding-top: 4px;
+                            }
+
+                            .help_num {
+                                padding: 0 20px 0 5px;
+                            }
+                        }
+                    }
+                }
+
+                .dis_comment {
+                    .com_content {
+                        padding: 15px;
+                        border-bottom: 1px solid #ddd;
+
+                        .con_title {
+                            padding-bottom: 20px;
+                            border-bottom: 1px solid #ddd;
+
+                            .anticon-message {
+                                padding-right: 15px;
+                            }
+                        }
+
+                        .form {
+                            margin: 30px 0;
+
+                            .text {
+                                height: 150px;
+                            }
+
+                            button {
+                                float: right;
+                            }
+                        }
+                    }
+                }
+
+                .all_discuss {
+                    .dis_list {
+                        padding: 15px;
+                        border-bottom: 1px solid #ddd;
+
+                        .list_header {
+                            h1 {
+                                float: left;
+                                margin: 0;
+                                font-size: 16px;
+                                line-height: 16px;
+                                font-weight: 600;
+                                white-space: nowrap;
+                            }
+
+                            h1:before {
+                                background: #ff6547;
+                                content: "";
+                                display: inline-block;
+                                width: 7px;
+                                height: 7px;
+                                margin-right: 5px;
+                                margin-bottom: 2px;
+                                vertical-align: middle;
+                            }
+
+                            .com_num {
+                                color: #999;
+                                display: inline-block;
+                                font-size: 12px;
+                                margin-top: 2px;
+                                vertical-align: top;
+                            }
+                        }
+
+                        .list_body {
+                            .answer_list {
+                                .answer_list_item {
+                                    position: relative;
+                                    padding-bottom: 15px;
+                                    padding-top: 15px;
+                                    border-bottom: 1px solid #e1e1e1;
+
+                                    .answer_content {
+                                        .answer_head {
+                                            a {
+                                                display: block;
+                                                float: left;
+                                                width: 50px;
+                                                height: 50px;
+                                                border: 1px solid #ededed;
+                                                overflow: hidden;
+                                                margin-right: 15px;
+                                                border-radius: 50%;
+
+                                                img {
+                                                    width: 100%;
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+
+                                        .answer_detail {
+                                            margin-left: 65px;
+                                            line-height: 1.5em;
+
+                                            p {
+                                                margin: 0;
+                                                padding: 0;
+                                                margin-bottom: 5px;
+                                                font-weight: 400;
+                                                font-size: 12px;
+
+                                                a {
+                                                    color: #5ea1f4 !important;
+                                                }
+                                            }
+
+                                            .answer_com {
+                                                display: block !important;
+                                                margin-left: 0 !important;
+                                                margin-top: 10px !important;
+                                                font-size: 14px;
+                                                white-space: pre-line;
+                                            }
+
+                                            .answer_foot {
+                                                margin-top: 10px;
+                                                color: #999;
+                                                font-size: 12px;
+                                                line-height: 20px;
+                                                white-space: pre-line;
+
+                                                a {
+                                                    float: right;
+                                                    padding: 0 6px;
+                                                    color: #21a88b;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+
+                                        .ans_answer {
+                                            display: none;
+                                            margin: 10px 0 0 65px;
+
+                                            .ans_text {
+                                                margin-bottom: -10px;
+                                            }
+
+                                            button {
+                                                float: right;
+                                            }
+                                        }
+
+                                        .ans_detail {
+                                            display: block;
+                                            margin: 10px 0 0 65px;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

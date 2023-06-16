@@ -1,0 +1,63 @@
+.sub_match {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #fff;
+    font-size: 14px;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    a {
+        cursor: pointer;
+    }
+
+    thead {
+        height: 42px;
+        background-color: #c6f1f5;
+        border-bottom: 1px solid #fff;
+        cursor: pointer;
+
+        tr {
+            padding: 5px 0;
+            height: 32px;
+            line-height: 32px;
+        }
+    }
+
+    tbody {
+        background-color: #fff;
+
+        tr {
+            height: 42px;
+            line-height: 42px;
+            border-bottom: 1px solid #e1e1e1;
+
+            .fn_left {
+                text-align: left;
+                overflow: hidden;
+                white-space: inherit;
+                text-overflow: ellipsis;
+
+                .f_left {
+                    float: left;
+                    color: #5a5a5a;
+                    font-weight: 700;
+                }
+
+                a {
+                    margin-left: 10px;
+                }
+
+                .anticon-lock {
+                    line-height: 44px;
+                }
+            }
+
+            .name {
+                word-wrap: normal;
+                max-width: 8em;
+                color: #b4b4b4 !important;
+            }
+        }
+    }
+}

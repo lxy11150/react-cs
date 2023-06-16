@@ -1,0 +1,33 @@
+.edit {
+    width: 1000px;
+    margin: auto;
+    padding-top: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    .post_body div {
+        height: auto !important;
+    }
+
+    .post_title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 30px;
+        width: 100%;
+        border-radius: 15px;
+
+        .ant-input {
+            padding: 5px 0;
+            font-size: 14px;
+        }
+    }
+
+    .post_type {
+        width: 150px;
+        margin-bottom: 30px;
+    }
+
+    .post_btn {
+        padding-top: 20px;
+    }
+}
