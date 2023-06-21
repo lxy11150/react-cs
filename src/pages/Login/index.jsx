@@ -21,9 +21,18 @@ const Login = () => {
             delete values.remember
             localStorage.removeItem('login')
         }
-
-        // console.log('Received values of form: ', values);
-        const login = await axiosRequest('post', '/login/username', values)
+        console.log(values);
+        let login = null
+        const str = values.username.includes("@")
+        console.log(str);
+        if (str) {
+            let value = {}
+            value.email = values.username
+            value.password = values.password
+            login = await axiosRequest('post', '/login/email', value)
+        } else {
+            login = await axiosRequest('post', '/login/username', values)
+        }
         // console.log(login);
 
         const token = login.data.data
