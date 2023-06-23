@@ -1,0 +1,104 @@
+.other {
+    width: 1500px;
+    margin: auto;
+    background-color: #f3f5f7;
+
+    h1 {
+        line-height: 44px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 36px;
+        font-weight: 400;
+    }
+
+    p {
+        margin-bottom: 18px;
+        font-size: 20px;
+        color: #666;
+    }
+
+    .claim .cl_p {
+        font-size: 16px;
+    }
+
+    .introduce .display {
+        display: flex;
+        flex-direction: row;
+
+        .int_display {
+            width: 500px;
+            height: 500px;
+            flex-shrink: 0;
+            cursor: pointer;
+            box-shadow: 0 5px 10px #7272720d;
+            border-radius: 20px;
+            background-color: #fff;
+
+            p {
+                padding: 15px;
+                line-height: 42px;
+                font-size: 24px;
+                color: #666;
+            }
+        }
+
+        .int_display:hover {
+            transform: scale(1.01);
+        }
+
+        .int_left {
+            margin-left: 50px;
+        }
+
+        .int_right {
+            margin-right: 50px;
+        }
+    }
+
+    .container {
+        width: 1200px;
+        margin: auto;
+
+        .claim,
+        .introduce,
+        .document {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    .document {
+        ul {
+            display: flex;
+            justify-content: center;
+            height: 130px;
+
+            li {
+                position: relative;
+                width: 120px;
+                height: 120px;
+                margin-right: 42px;
+                flex-shrink: 0;
+                cursor: pointer;
+                box-shadow: 0 5px 10px #7272720d;
+                border-radius: 20px;
+                background-color: #fff;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    width: 120px;
+                    height: 120px;
+                    font-size: 32px;
+                    padding: 15px;
+                    color: #666;
+                }
+            }
+
+            li:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

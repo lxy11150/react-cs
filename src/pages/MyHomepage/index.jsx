@@ -61,11 +61,6 @@ const MyHomepage = () => {
                     </div>
                 </div>
             </div>
-            <div className="section">
-                <div className="section-title">
-                    我的练习
-                </div>
-            </div>
         </div>
     )
 }

@@ -19,6 +19,7 @@ import MyHomepage from './pages/MyHomepage'
 import MyContest from './pages/MyContest'
 import MyForum from './pages/MyForum'
 import Edit from './pages/Edit'
+import AllComments from './pages/AllComments'
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
           <Route path='allposts' element={<Allposts />} />
           <Route path='other' element={<Other />} />
           <Route path='edit/:postid' element={<Edit />} />
+          <Route path='allcomments/:postid' element={<AllComments />} />
         </Route>
         <Route path='/agreement' element={<Agreement />} />
         <Route path="/register" element={<Register />} />

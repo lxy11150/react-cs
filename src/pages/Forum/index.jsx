@@ -6,7 +6,7 @@ import MajorForum from '../../components/MajorForum/majorForum'
 
 const Forum = () => {
     return (
-        <div className='forum'>
+        <div className='forum clearfix'>
             <div className="forum_head">
                 <div className="forum_wrap">
                     <div className="forum_head_title">
@@ -15,7 +15,7 @@ const Forum = () => {
                     </div>
                 </div>
             </div>
-            <div className="forum_body">
+            <div className="forum_body clearfix">
                 <div className="forum_con">
                     <div className="forum_left">
                         <MajorForum></MajorForum>

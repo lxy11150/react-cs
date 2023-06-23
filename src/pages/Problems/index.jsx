@@ -60,7 +60,7 @@ export default function QuestionBank() {
         }
 
         return (
-            <>
+            <div>
                 {/* 这个 div 用于选择题目类型的标签 */}
                 <div style={{
                     position: 'absolute',
@@ -97,7 +97,7 @@ export default function QuestionBank() {
                         <Button onClick={onClickSubmit} type="primary" icon={<SearchOutlined />}>筛选</Button>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 
@@ -153,53 +153,55 @@ export default function QuestionBank() {
         // }
 
         return (
-            <List
-                className="list"
-                dataSource={data}
-                renderItem={(item, index) => (
-                    <List.Item key={item.email}>
-                        <List.Item.Meta
-                            avatar={<h4>{index + 1}</h4>}
-                            title={
-                                <p id={item.id} key={index + 1}>
-                                    <a href={item.question_list} target="_blank" >
-                                        {sliceContent(item.content)}
-                                    </a>
-                                </p>
-                            }
-                            description={
-                                <Button
-                                    href={item.url}
-                                    type="primary"
-                                    icon={<ArrowUpOutlined />}
-                                    size="small"
-                                >跳转到题目来源</Button>
-                            }
-                        />
-                    </List.Item>
-                )}
-            >
-                <Button
-                    onClick={loadMoreData}
-                    style={{
-                        position: 'absolute',
-                        float: 'left',
-                        left: 350,
-                    }}
-                >加载更多</Button>
-            </List>
+            <div>
+                <List
+                    className="list clearfix"
+                    dataSource={data}
+                    renderItem={(item, index) => (
+                        <List.Item key={item.email}>
+                            <List.Item.Meta
+                                avatar={<h4>{index + 1}</h4>}
+                                title={
+                                    <p id={item.id} key={index + 1}>
+                                        <a href={item.question_list} target="_blank" >
+                                            {sliceContent(item.content)}
+                                        </a>
+                                    </p>
+                                }
+                                description={
+                                    <Button
+                                        href={item.url}
+                                        type="primary"
+                                        icon={<ArrowUpOutlined />}
+                                        size="small"
+                                    >跳转到题目来源</Button>
+                                }
+                            />
+                        </List.Item>
+                    )}
+                >
+                    <Button
+                        onClick={loadMoreData}
+                        style={{
+                            position: 'absolute',
+                            float: 'left',
+                            left: 350,
+                        }}
+                    >加载更多</Button>
+                </List>
+            </div>
         )
     }
 
     return (
-        <>
+        <div className="pro_box clearfix">
             <Header style={{
                 backgroundColor: '#FFFFFF',
                 height: '70px',
             }}>
                 <QuestionBankNavigation />
             </Header>
-            <Content>
+            <Content className="clearfix">
                 {/* 用来选择题目信息 */}
                 <div style={{
                     position: 'relative',
@@ -217,7 +219,7 @@ export default function QuestionBank() {
                     </div>
                 </div>
             </Content>
-        </>
+        </div>
     )
 }
 

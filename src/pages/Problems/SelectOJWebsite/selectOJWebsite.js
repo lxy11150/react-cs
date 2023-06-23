@@ -6,7 +6,7 @@ const SelectOJWebsite = (props) => {
 
     return (
         <div style={{
-            position: 'absolute',
+            position: 'relative',
             float: 'left',
             top: '60px',
             left: '220px',

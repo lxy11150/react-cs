@@ -1,21 +1,28 @@
 import { useState, useEffect, useRef } from 'react'
-import { UserOutlined, HistoryOutlined, MessageOutlined, LikeOutlined, DislikeOutlined } from '@ant-design/icons'
+import {
+    UserOutlined,
+    HistoryOutlined,
+    MessageOutlined,
+    LikeOutlined,
+    DislikeOutlined,
+    DoubleRightOutlined
+} from '@ant-design/icons'
 import { Form, Input, Button } from 'antd'
 import { useForm } from 'antd/es/form/Form'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { axiosRequest } from '../../utils/axiosRequest'
 import { getToken } from '../../utils/getToken'
 import RenderHTMLString from '../../components/RenderHTMLString/renderHTNLString'
-import img from '../../assets/user.jpg'
+import Recomment from '../../components/Recomment/recomment'
 import './index.scss'
 
 const Discuss = () => {
     const [login, setLogin] = useState({}) //当前登录者的用户信息
     const [content, setContent] = useState({}) //文章内容
     const [user, setUser] = useState({}) //文章作者信息
-    const [comment, setComment] = useState() //文章评论信息
+    const [comment, setComment] = useState([]) //文章评论信息
+    const [send, setSend] = useState() //单页文章展示的信息
     const [recomment, setRecomment] = useState([]) //对应文章评论的回复
-    const [reforms, setReforms] = useState([]);
     const [form] = useForm(); //表单元素
     const params = useParams() //检索parmas参数
     const navigate = useNavigate() //导航参数
@@ -24,6 +31,7 @@ const Discuss = () => {
     const help = useRef()
     const huifu = useRef([])
     const token = getToken()
+    let i = 0
 
     //得到当前登录者信息
     const getLogin = async () => {
@@ -42,26 +50,24 @@ const Discuss = () => {
     const getContent = async () => {
         const res = await axiosRequest('get', `/forum/findPostById/${params.postid}`, null, token)
         setContent(res.data.data)
-        console.log(res.data.data);
-        getComment(res.data.data.postid)
+        // console.log(res.data.data);
     }
 
-    //得到本登录者对这篇文章的点赞情况
-    const getLikes = async () => {
-    }
     //得到文章评论信息
-    const getComment = async (postid) => {
-        const comm = await axiosRequest('get', `/forum/searchStatement/${postid}`, null, token)
-        console.log(comm.data.data);
+    const getComment = async () => {
+        const comm = await axiosRequest('get', `/forum/searchStatement/${params.postid}`, null, token)
+        // console.log(comm.data.data);
         setComment(comm.data.data)
+        setSend(comm.data.data.slice(0, 20))
         getRecomment(comm.data.data)
     }
 
+    //得到评论的回复信息
     const getRecomment = async (comm) => {
         let res = []
         for (let i = 0; i < comm.length; i++) {
             const recomm = await axiosRequest('get', `/forum/searchStatement/${comm[i].postid}`, null, token)
-            console.log(recomm.data.data);
+            // console.log(recomm.data.data);
             res.push(recomm.data.data)
         }
         setRecomment(res)
@@ -73,6 +79,7 @@ const Discuss = () => {
         token && getUser()
         token && getLogin()
         token && getContent()
+        token && getComment()
     }, [])
 
     //更新评论
@@ -98,6 +105,7 @@ const Discuss = () => {
     const handleAddDishelp = (e) => {
     }
 
+    //是否隐藏回复框
     const handleOut = (index) => {
         const dis = huifu.current[index]
         if (dis.style.display == 'block') {
@@ -107,6 +115,7 @@ const Discuss = () => {
         }
     }
 
+    //将评论回复发往后端
     const handleHuifu = (value, index) => {
         console.log(value);
 
@@ -124,17 +133,20 @@ const Discuss = () => {
     return (
         <div className="discuss">
             <div className="dis_container">
+                {/* 用户信息 */}
                 <div className="dis_left">
                     <div className="dis_info">
                         <h4 className="user_nick">{user.username}</h4>
                         <p>{`用户名：${user.username}`}</p>
-                        <p>已参加比赛：191</p>
-                        <p>文章发表：26</p>
+                        <p>{`帖子评论：${content.statement_numbers}`}</p>
+                        <p>{`文章发表：${user.postnumbers}`}</p>
                         <p>{`个性标签：${user.tag}`}</p>
                     </div>
                 </div>
+                {/* 帖子信息区*/}
                 <div className="dis_right">
                     <div className="dis_content">
+                        {/* 帖子的头部 */}
                         <div className="dis_header">
                             <div className="dis_title">
                                 <h1>{content.title}</h1>
@@ -146,11 +158,12 @@ const Discuss = () => {
                                 <HistoryOutlined />
                                 <span>{`  发表时间：${content.localDateTime}`}</span>
                                 <span className='scan'>
-                                    {`浏览：${content.statement_numbers ? content.statement_numbers : 0}　|　
-                                    评论：${content.statement_numbers ? content.statement_numbers : 0}`}
+                                    {`浏览：${content.statement_numbers}　|　
+                                    评论：${content.statement_numbers}`}
                                 </span>
                             </div>
                         </div>
+                        {/* 帖子内容 */}
                         <div className="dis_body">
                             <div className="body_content">
                                 <RenderHTMLString htmlString={content.content} />;
@@ -162,6 +175,7 @@ const Discuss = () => {
                                 </div>
                             </div>
                         </div>
+                        {/* 发表帖子评论 */}
                         <div className="dis_comment">
                             <div className="com_content">
                                 <div className="con_title">
@@ -188,6 +202,7 @@ const Discuss = () => {
                                 </div>
                             </div>
                         </div>
+                        {/* 帖子评论展示区 */}
                         <div className="all_discuss">
                             <div className="dis_list">
                                 <div className="list_header clearfix">
@@ -198,12 +213,12 @@ const Discuss = () => {
                                 </div>
                                 <div className="list_body clearfix">
                                     <div className="answer_list">
-                                        {comment ? comment?.map((item, index) => (
+                                        {send ? send?.map((item, index) => (
                                             <div className="answer_list_item" key={item.localDateTime}>
                                                 <div className="answer_content clearfix">
                                                     <div className="answer_head">
-                                                        <a href="#">
-                                                            <img src={img} alt="" />
+                                                        <a className='user-wrap' href="#">
+                                                            <div className="user-image user-portrait">{item.username.slice(0, 1)}</div>
                                                         </a>
                                                     </div>
                                                     <div className="answer_detail">
@@ -222,45 +237,32 @@ const Discuss = () => {
                                                         </div>
                                                     </div>
                                                     <div className="ans_answer" ref={c => huifu.current[index] = c}>
-                                                        <Form
-                                                            form={reforms[index]}
-                                                            className='ans_form'
-                                                            onFinish={(values) => handleHuifu(values, index)}
-                                                        >
-                                                            <Form.Item
-                                                                name='reply'
-                                                            >
-                                                                <Input.TextArea
-                                                                    className='ans_text'
-                                                                    placeholder={`${login.username}向  @${item.username}回复`}
-                                                                />
-                                                            </Form.Item>
-                                                            <Form.Item>
-                                                                <Button type="primary" htmlType="submit">
-                                                                    发布
-                                                                </Button>
-                                                            </Form.Item>
-                                                        </Form>
+                                                        <Recomment
+                                                            login={login.username}
+                                                            user={item.username}
+                                                            index={index}
+                                                            handleHuifu={handleHuifu}
+                                                        />
                                                     </div>
-
                                                     {recomment[index] ? recomment[index].map(re => (
                                                         <div className="ans_detail" key={re.localDateTime}>
                                                             <div className="huifu">
                                                                 <div className="answer_head">
-                                                                    <a href="#">
-                                                                        <img src={img} alt="" />
+                                                                    <a className='user-wrap' href="#">
+                                                                        <div className="user-image user-portrait">{item.username.slice(0, 1)}</div>
                                                                     </a>
                                                                 </div>
                                                                 <div className="answer_detail">
-                                                                    <p>
-                                                                        <a href="#">{re.username}</a>
-                                                                    </p>
+                                                                    <div className='clearfix' style={{ height: 24 }}>
+                                                                        <a href="#" style={{ float: 'left' }} >{re.username}</a>
+                                                                        <div className="answer_foot" style={{ float: 'right' }} >
+                                                                            <span className="answer-time">回复于 {re.localDateTime}</span>
+                                                                        </div>
+                                                                    </div>
                                                                     <div className="answer_com">
                                                                         {re.content}
                                                                     </div>
-                                                                    <div className="answer_foot">
-                                                                        <span className="answer-time">回复于 {re.localDateTime}</span>
-                                                                    </div>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -271,6 +273,10 @@ const Discuss = () => {
                                     </div>
                                 </div>
                             </div>
+                            <Link to={`/home/allcomments/${params.postid}`} className="more_discuss" >
+                                更多评论
+                                <DoubleRightOutlined />
+                            </Link>
                         </div>
                     </div>
                 </div>

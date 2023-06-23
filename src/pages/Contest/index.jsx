@@ -5,7 +5,7 @@ import './index.scss'
 
 const Contest = () => {
     return (
-        <div className="contest">
+        <div className="contest clearfix">
             <div className="slide">
                 <Slide></Slide>
             </div>
@@ -13,7 +13,7 @@ const Contest = () => {
                 <div className="display_menu">
                     <Menus></Menus>
                 </div>
-                <div className="con_content">
+                <div className="con_content clearfix">
                     <Substance></Substance>
                 </div>
             </div>

@@ -1,0 +1,39 @@
+.bubble {
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 100px;
+    text-decoration: none;
+    animation: floatAnimation 5s infinite ease-in-out;
+}
+
+.bubble:hover {
+    transform: scale(1.1);
+}
+
+.bubble.popped {
+    animation: pop 0.5s linear;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(150);
+        transform: scale(1);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(150);
+        transform: scale(2);
+        opacity: 0;
+    }
+}

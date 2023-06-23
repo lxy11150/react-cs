@@ -64,9 +64,8 @@ const Hotpost = () => {
                                 </a>
                                 <p>
                                     &nbsp;&nbsp;
-                                    {item.local_date_time}
-                                    &nbsp;&nbsp;
-                                    5天前回复
+                                    {item.localDateTime}
+                                    发布
                                 </p>
                                 <div className="reply">
                                     <span className='pad'>回复</span>

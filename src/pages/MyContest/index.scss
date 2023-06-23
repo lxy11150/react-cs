@@ -1,0 +1,30 @@
+.my-contest {
+    .empty {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #000;
+        font-size: 16px;
+        padding-top: 75px;
+        background: url(../../assets/empty.png) top no-repeat;
+        background-size: 60px 52px;
+
+        .empty-title {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .empty-desc {
+            font-size: 14px;
+            color: #666;
+
+            .ai-studio-link {
+                color: #2932e1;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+}

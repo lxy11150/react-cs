@@ -1,15 +1,16 @@
 import React from 'react'
-import Header from '../../components/Header/header'
+import Headers from '../../components/Header/header'
+import Footer from '../../components/Footer/footer'
 import { Outlet } from 'react-router-dom'
-
 
 const Home = () => {
 
     return (
         <>
-            <Header />
+            <Headers />
             <hr></hr>
             <Outlet />
+            <Footer />
         </>
     )
 }

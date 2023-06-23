@@ -45,7 +45,6 @@
             background-color: #fff;
 
             .dis_content {
-                border: 1px solid #ddd;
                 border-radius: 10px;
 
                 .dis_header {
@@ -206,19 +205,30 @@
 
                                     .answer_content {
                                         .answer_head {
-                                            a {
-                                                display: block;
+                                            .user-wrap {
                                                 float: left;
                                                 width: 50px;
                                                 height: 50px;
-                                                border: 1px solid #ededed;
-                                                overflow: hidden;
-                                                margin-right: 15px;
+                                                border: 3px solid #ebba8e;
                                                 border-radius: 50%;
+                                                margin-right: 15px;
 
-                                                img {
-                                                    width: 100%;
-                                                    display: block;
+                                                .user-image {
+                                                    display: flex;
+                                                    width: 50px;
+                                                    height: 50px;
+                                                    font-size: 32px;
+                                                    color: #e08792;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    margin-right: 8px;
+                                                    background: #f0f0f0;
+                                                }
+
+                                                .user-portrait {
+                                                    max-width: 100%;
+                                                    max-height: 100%;
+                                                    border-radius: 100%;
                                                 }
                                             }
                                         }
@@ -282,9 +292,25 @@
                                         }
                                     }
                                 }
-
                             }
                         }
+                    }
+
+                    .more_discuss {
+                        float: right;
+                        padding: 20px 0;
+                        margin-right: 10px;
+                        font-size: 14px;
+                        color: #afafaf;
+                        cursor: pointer;
+
+                        .anticon-double-right {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .more_discuss:hover {
+                        color: #666;
                     }
                 }
             }

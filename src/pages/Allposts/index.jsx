@@ -1,14 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { axiosRequest } from '../../utils/axiosRequest'
-import { Pagination, Input } from 'antd'
+import { Pagination } from 'antd'
 import { getToken } from '../../utils/getToken'
-import img from '../../assets/user.jpg'
 import './index.scss'
 
 const Allposts = () => {
-    const [state, setState] = useState()
-    const [length, setLength] = useState(50)
+    const [state, setState] = useState([])
+    const [send, setSend] = useState()
     const navigate = useNavigate()
     const ref = useRef()
     const token = getToken()
@@ -20,8 +19,11 @@ const Allposts = () => {
 
     const handleChange = async (e) => {
         // console.log(e);
-        const res = await axiosRequest('get', `/forum/getPostByPage/${e}/20`, null, token)
-        // setState(res.data.data)
+        if (e * 15 < state.length) {
+            setSend(state.slice(e * 15 - 15, e * 15))
+        } else {
+            setSend(state.slice(e * 15 - 15, state.length))
+        }
     }
 
     //将前往第几页翻译成中文
@@ -36,29 +38,25 @@ const Allposts = () => {
     const getForum = async () => {
         const forum = await axiosRequest('get', '/forum/findAll', null, token)
         setState(forum.data.data)
-        // setLength(forum.data.data.length)
-        // console.log(forum.data.data)
+        setSend(forum.data.data.slice(0, 15))
     }
 
     useEffect(() => {
         !token && navigate('/login')
         token && getForum()
-        handleChinese()
+        state.length > 15 && handleChinese()
     }, [])
 
     return (
         <div className="allposts">
             <div className="all_container">
-                <div className="post-input">
-
-                </div>
                 <div className="all_body">
                     {/* 调用map的对象时，其初始化第一次渲染时“异步数据”为undefined
                     使用可选链式运算符(?.)可解决问题*/}
-                    {state?.map(item => (
+                    {send?.map(item => (
                         <div className="hot_item" key={item.postid}>
-                            <a href="http://localhost:3001/home/usercenter" className='user_i clearfix'>
-                                <img src={img} alt="" />
+                            <a className='user-wrap' href="#">
+                                <div className="user-image user-portrait">{item.username.slice(0, 1)}</div>
                             </a>
                             <div className="item_detail clearfix">
                                 <a
@@ -76,9 +74,8 @@ const Allposts = () => {
                                     </a>
                                     <p>
                                         &nbsp;&nbsp;
-                                        {item.local_date_time}
-                                        &nbsp;&nbsp;
-                                        5天前回复
+                                        {item.localDateTime}
+                                        发布
                                     </p>
                                     <div className="reply">
                                         <span className='pad'>回复</span>
@@ -95,8 +92,8 @@ const Allposts = () => {
                 <div className="pagination" ref={ref}>
                     <Pagination
                         defaultCurrent={1}
-                        defaultPageSize={20}
-                        total={length}
+                        defaultPageSize={15}
+                        total={state.length}
                         showSizeChanger={false}
                         showQuickJumper
                         onChange={handleChange}

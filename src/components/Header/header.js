@@ -34,7 +34,7 @@ const items = [
     },
 ];
 
-const Header = React.memo(
+const Headers = React.memo(
     (props) => {
         let location = useLocation()
         const navigate = useNavigate();
@@ -43,6 +43,7 @@ const Header = React.memo(
             console.log(location.pathname);
             setCurrent(e.key);
         };
+        
         return (
             <div className='header clearfix'>
                 <div className='logo'><img src={logo} alt="" /></div>
@@ -56,4 +57,4 @@ const Header = React.memo(
         )
     }
 )
-export default Header;
+export default Headers;
