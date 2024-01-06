@@ -131,7 +131,7 @@ const Discuss = () => {
     }
 
     return (
-        <div className="discuss">
+        <div className="discuss clearfix">
             <div className="dis_container">
                 {/* 用户信息 */}
                 <div className="dis_left">

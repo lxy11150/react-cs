@@ -51,7 +51,7 @@ export default function QuestionBank() {
             }
             axios.request({
                 method: "GET",
-                url: `http://localhost:8080/questionBank/get${selectOJ}/${numKeywords}/1/40`,
+                url: `http://120.26.83.172:8080/questionBank/get${selectOJ}/${numKeywords}/1/40`,
             }).then(response => {
                 setData([...response.data.data.records])
                 console.log(response.data.data.records);
@@ -137,7 +137,7 @@ export default function QuestionBank() {
             }
             axios.request({
                 method: "GET",
-                url: `http://localhost:8080/questionBank/get${selectOJ}/${numKeywords}/${page}/40`,
+                url: `http://120.26.83.172:8080/questionBank/get${selectOJ}/${numKeywords}/${page}/40`,
             }).then(response => {
                 setData([...data, ...response.data.data.records])
                 console.log('data: ' + data);
@@ -163,14 +163,15 @@ export default function QuestionBank() {
                                 avatar={<h4>{index + 1}</h4>}
                                 title={
                                     <p id={item.id} key={index + 1}>
-                                        <a href={item.question_list} target="_blank" >
+                                        <a href={item.questionurl ? item.questionurl : item.url} target="_blank" >
                                             {sliceContent(item.content)}
                                         </a>
                                     </p>
                                 }
                                 description={
                                     <Button
-                                        href={item.url}
+                                        href={item.questionurl ? item.questionurl : item.url}
+                                        target="_blank"
                                         type="primary"
                                         icon={<ArrowUpOutlined />}
                                         size="small"

@@ -4,7 +4,6 @@ import { FileTextOutlined, PlusOutlined, RightOutlined } from '@ant-design/icons
 import { Button } from 'antd'
 import { axiosRequest } from '../../utils/axiosRequest'
 import { getToken } from '../../utils/getToken'
-import img from '../../assets/user.jpg'
 import './hotpost.scss'
 
 
